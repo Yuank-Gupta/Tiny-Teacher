@@ -84,33 +84,17 @@ function renderError(msg) {
   card.innerHTML = `<p class="error">${msg}</p>`;
 }
 
-
 async function callAI(messages) {
-  const res = await fetch(API_URL, {
+  const res = await fetch("/api/chat", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${API_KEY}`
+      "Content-Type": "application/json"
     },
-    body: JSON.stringify({
-      model: API_MODEL,
-      messages: messages,
-      temperature: 0.7
-    })
+    body: JSON.stringify({ messages })
   });
 
   if (!res.ok) {
-    let detail = "";
-
-    try {
-      const errorData = await res.json();
-      detail =
-        errorData?.error?.message ||
-        errorData?.message ||
-        "";
-    } catch {}
-
-    throw new Error(detail || `Request failed (${res.status})`);
+    throw new Error(`Request failed (${res.status})`);
   }
 
   const data = await res.json();

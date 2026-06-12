@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ELI5 — Explain Like I'm 5</title>
+  <meta name="description" content="Type any topic and get a warm, ultra-simple explanation a five-year-old could understand." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <div class="blob blob-1" aria-hidden="true"></div>
+    <div class="blob blob-2" aria-hidden="true"></div>
+
+    <div class="container">
+      <h1 class="title">ELI5</h1>
+      <p class="kicker">Explain Like I'm 5</p>
+      <p class="subtitle">Explain anything, like I'm five.</p>
+
+      <div class="icon-bubble" aria-hidden="true">
+        <!-- lightbulb -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+          <path d="M9 18h6"/>
+          <path d="M10 22h4"/>
+        </svg>
+      </div>
+
+      <form id="form" class="search">
+        <input id="topic" type="text" autocomplete="off"
+               placeholder="What do you want to understand? (e.g., Quantum Physics)..." />
+      </form>
+
+      <div id="panel" class="panel hidden">
+        <article id="card" class="card">
+          <!-- dynamic content -->
+        </article>
+
+        <div id="feedback" class="feedback hidden">
+          <button id="up" class="round-btn" aria-label="Thumbs up">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 10v12"/>
+              <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H7V10l4.34-8.66A1.5 1.5 0 0 1 14 2h.5a2.5 2.5 0 0 1 2.5 2.5v0a3 3 0 0 1-2 2.88Z"/>
+            </svg>
+          </button>
+          <button id="down" class="round-btn" aria-label="Thumbs down">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 14V2"/>
+              <path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H17v12l-4.34 8.66A1.5 1.5 0 0 1 10 22h-.5a2.5 2.5 0 0 1-2.5-2.5v0a3 3 0 0 1 2-2.88Z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
